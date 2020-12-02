@@ -1,4 +1,4 @@
-package com.phb.appcrud
+package com.phb.crudapp
 
 import android.content.Context
 import android.view.LayoutInflater

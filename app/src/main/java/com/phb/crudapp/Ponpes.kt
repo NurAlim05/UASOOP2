@@ -1,4 +1,4 @@
-package com.phb.appcrud
+package com.phb.crudapp
 
 data class Ponpes(var id: Long?, var pesantren: String?, var alamatponpes: String?, var pengasuh: String?){
     companion object{

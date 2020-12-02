@@ -1,4 +1,4 @@
-package com.phb.appcrud
+package com.phb.crudapp
 
 data class Santri(var id: Long?, var nama: String?, var alamat: String?, var handphone: String?) {
     companion object {

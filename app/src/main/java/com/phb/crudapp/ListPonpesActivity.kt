@@ -1,4 +1,4 @@
-package com.phb.appcrud
+package com.phb.crudapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
