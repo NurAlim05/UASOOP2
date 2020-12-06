@@ -10,6 +10,7 @@ import org.jetbrains.anko.db.select
 
 class ListPonpesActivity : AppCompatActivity() {
 
+
     private lateinit var adapter: RVAdapterPonpes
     private var pendidikan = ArrayList<Ponpes>()
     override fun onCreate(savedInstanceState: Bundle?) {

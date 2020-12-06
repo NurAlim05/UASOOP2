@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         buttonLihatData.setOnClickListener {
-            toast("Data Di Lihat")
+            toast("Data Dilihat")
         }
 
         buttonUpdate.setOnClickListener {

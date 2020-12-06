@@ -15,6 +15,7 @@ class RVAdapterPonpes(val context: Context, val items: ArrayList<Ponpes>) : Recy
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
 
+
         fun bindItem(items: Ponpes){
             itemView.namaPesantren.text = items.pesantren
             itemView.alamatPesantren.text = items.alamatponpes
