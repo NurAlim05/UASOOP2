@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.phb.crudapp.R
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.db.insert
+import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
 class MainActivity : AppCompatActivity() {
@@ -18,7 +19,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         buttonLihatData.setOnClickListener {
-            toast("Data Dilihat")
+            startActivity<ListSantriActivity>()
+            startActivity<ListPonpesActivity>()
         }
 
         buttonUpdate.setOnClickListener {

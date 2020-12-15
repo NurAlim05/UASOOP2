@@ -61,7 +61,6 @@
             android:text="pengasuh"
             android:textSize="20dp" />
     </LinearLayout>
-
     <Button
         android:id="@+id/btnEdit"
         android:layout_width="match_parent"

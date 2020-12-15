@@ -9,7 +9,6 @@ import org.jetbrains.anko.db.classParser
 import org.jetbrains.anko.db.select
 
 class ListSantriActivity : AppCompatActivity() {
-
     private lateinit var adapter: RVAdapter
     private var santri = ArrayList<Santri>()
     override fun onCreate(savedInstanceState: Bundle?) {
