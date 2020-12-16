@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         buttonLihatData.setOnClickListener {
+            
             startActivity<ListSantriActivity>()
             startActivity<ListPonpesActivity>()
         }

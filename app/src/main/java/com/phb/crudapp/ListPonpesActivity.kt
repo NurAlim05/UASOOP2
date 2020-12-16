@@ -10,14 +10,13 @@ import org.jetbrains.anko.db.select
 
 class ListPonpesActivity : AppCompatActivity() {
 
-
     private lateinit var adapter: RVAdapterPonpes
-    private var pendidikan = ArrayList<Ponpes>()
+    private var ponpes = ArrayList<Ponpes>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_ponpes)
 
-        adapter = RVAdapterPonpes(this, pendidikan)
+        adapter = RVAdapterPonpes(this, ponpes)
         recylerViewPonpes.adapter = adapter
 
         getData()
@@ -26,10 +25,10 @@ class ListPonpesActivity : AppCompatActivity() {
 
     private fun getData() {
         database.use {
-            pendidikan.clear()
+            ponpes.clear()
             var result = select(Ponpes.TABLE_PONPES)
             var dataPonpes = result.parseList(classParser<Ponpes>())
-            pendidikan.addAll(dataPonpes)
+            ponpes.addAll(dataPonpes)
             adapter.notifyDataSetChanged()
         }
     }
