@@ -3,7 +3,6 @@ package com.phb.crudapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.phb.crudapp.R
 import kotlinx.android.synthetic.main.activity_list_ponpes.*
 import org.jetbrains.anko.db.classParser
 import org.jetbrains.anko.db.select

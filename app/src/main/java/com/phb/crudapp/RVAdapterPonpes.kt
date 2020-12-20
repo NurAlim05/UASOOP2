@@ -22,30 +22,26 @@ class RVAdapterPonpes(val context: Context, val items: ArrayList<Ponpes>) : Recy
             itemView.pengasuhPesantren.text = items.pengasuh
 
             itemView.btnEdit.setOnClickListener {
-                itemView.context.startActivity<MainActivity>(
-                    "oldPesantren" to items.pesantren,
-                    "oldAlamatPesantren" to items.alamatponpes,
-                    "oldPengasuh" to items.pengasuh
-                )
+                itemView.context.toast("Data Di Edit")
             }
 
             itemView.btnHapus.setOnClickListener {
-                itemView.context.database.use {
-                    delete(Ponpes.TABLE_PONPES, "(${Ponpes.PESANTREN} = {pesantren})",
-                        "pesantren" to items.pesantren.toString())
-                }
                 itemView.context.toast("Data Dihapus")
             }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_list, parent, false))
+        TODO("Not yet implemented")
     }
-
-    override fun getItemCount(): Int = items.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindItem(items[position])
+        TODO("Not yet implemented")
     }
+
+    override fun getItemCount(): Int {
+        TODO("Not yet implemented")
+    }
+
+
 }
