@@ -26,6 +26,12 @@ class RVAdapterPonpes(val context: Context, val items: ArrayList<Ponpes>) : Recy
             }
 
             itemView.btnHapus.setOnClickListener {
+                itemView.context.database.use {
+                    delete(
+                        Ponpes.TABLE_PONPES, "${Ponpes.PESANTREN} = {pesantren})",
+                        "pesantren" to items.pesantren.toString()
+                    )
+                }
                 itemView.context.toast("Data Dihapus")
             }
         }
