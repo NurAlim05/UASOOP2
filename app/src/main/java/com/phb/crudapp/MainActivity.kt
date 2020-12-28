@@ -17,6 +17,9 @@ class MainActivity : AppCompatActivity() {
         var oldNama = intent.getStringExtra("oldNama")
         var oldAlamat = intent.getStringExtra("oldAlamat")
         var oldHandphone = intent.getStringExtra("oldHandphone")
+        var oldPesantren = intent.getStringExtra("oldPesantren")
+        var oldAlamatPonpes = intent.getStringExtra("oldAlamatPonpes")
+        var oldPengasuh = intent.getStringExtra("oldPengasuh")
 
         if (oldAlamat.isNullOrBlank()){
             buttonUpdate.isEnabled = false
@@ -25,6 +28,9 @@ class MainActivity : AppCompatActivity() {
             editTextNama.setText(oldNama)
             editTextAlamat.setText(oldAlamat)
             editTextHandphone.setText(oldHandphone)
+            editTextPesantren.setText(oldPesantren)
+            editTextAlamatPesantren.setText(oldAlamatPonpes)
+            editTextPengasuh.setText(oldPengasuh)
 
         }
 
@@ -47,6 +53,13 @@ class MainActivity : AppCompatActivity() {
                     Santri.HANDPHONE to editTextHandphone.text.toString())
                     .whereArgs("${Santri.NAMA} = {nama}",
                         "nama" to oldNama
+                    ).exec()
+                update(Ponpes.TABLE_PONPES,
+                    Ponpes.PESANTREN to editTextPesantren.text.toString(),
+                    Ponpes.ALAMATPONPES to editTextAlamatPesantren.text.toString(),
+                    Ponpes.PENGASUH to editTextPengasuh.text.toString())
+                    .whereArgs("${Ponpes.PESANTREN} = {pesantren}",
+                        "pesantren" to oldPesantren
                     ).exec()
             }
             toast("Data berhasil di update!")

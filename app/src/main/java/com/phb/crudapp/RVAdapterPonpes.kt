@@ -22,7 +22,11 @@ class RVAdapterPonpes(val context: Context, val items: ArrayList<Ponpes>) : Recy
             itemView.pengasuhPesantren.text = items.pengasuh
 
             itemView.btnEdit.setOnClickListener {
-                itemView.context.toast("Data Di Edit")
+                itemView.context.startActivity<MainActivity>(
+                    "oldPesantren" to items.pesantren,
+                    "oldAlamatPonpes" to items.alamatponpes,
+                    "oldPengasuh" to items.pengasuh
+                )
             }
 
             itemView.btnHapus.setOnClickListener {
