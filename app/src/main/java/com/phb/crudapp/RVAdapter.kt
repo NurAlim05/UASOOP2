@@ -20,7 +20,11 @@ class RVAdapter(val context: Context, val items: ArrayList<Santri>) : RecyclerVi
             itemView.handphoneSantri.text = items.handphone
 
             itemView.btnEdit.setOnClickListener {
-
+                itemView.context.startActivity<MainActivity>(
+                    "oldNama" to items.nama,
+                    "oldAlamat" to items.alamat,
+                    "oldHandphone" to items.handphone
+                )
             }
 
             itemView.btnHapus.setOnClickListener {
