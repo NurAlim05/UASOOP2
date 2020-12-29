@@ -7,6 +7,15 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <TextView
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="4dp"
+        android:textSize="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Data Santri :" />
 
     <EditText
         android:id="@+id/editTextNama"
@@ -43,6 +52,16 @@
         android:ems="10"
         android:hint="Masukan No Handphone"
         android:inputType="text" />
+
+    <TextView
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="4dp"
+        android:textSize="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Data Pesantren :" />
 
     <EditText
         android:id="@+id/editTextPesantren"
@@ -109,4 +128,6 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="4dp"
         android:text="Update" />
+
+
 </LinearLayout>
