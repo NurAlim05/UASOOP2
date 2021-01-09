@@ -15,7 +15,53 @@
         android:textSize="18dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Data Santri :" />
+        android:text="Data Laptop :" />
+
+    <EditText
+        android:id="@+id/editTextMerk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="4dp"
+        android:ems="10"
+        android:hint="Masukan Merk Laptop"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editTextWarna"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="4dp"
+        android:ems="10"
+        android:hint="Masukan Warna Laptop"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editTextHarga"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="4dp"
+        android:ems="10"
+        android:hint="Masukan Harga Laptop"
+        android:inputType="text" />
+
+    <TextView
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="4dp"
+        android:textSize="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Data Toko Laptop :" />
 
     <EditText
         android:id="@+id/editTextNama"
@@ -26,7 +72,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="4dp"
         android:ems="10"
-        android:hint="Masukan Nama"
+        android:hint="Masukan Nama Toko"
         android:inputType="text" />
 
     <EditText
@@ -38,11 +84,11 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="4dp"
         android:ems="10"
-        android:hint="Masukan Alamat"
+        android:hint="Masukan Alamat Toko"
         android:inputType="text" />
 
     <EditText
-        android:id="@+id/editTextHandphone"
+        android:id="@+id/editTextNohp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
@@ -50,53 +96,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="4dp"
         android:ems="10"
-        android:hint="Masukan No Handphone"
-        android:inputType="text" />
-
-    <TextView
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="4dp"
-        android:textSize="18dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Data Pesantren :" />
-
-    <EditText
-        android:id="@+id/editTextPesantren"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="4dp"
-        android:ems="10"
-        android:hint="Masukan Nama Pesantren"
-        android:inputType="text" />
-
-    <EditText
-        android:id="@+id/editTextAlamatPesantren"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="4dp"
-        android:ems="10"
-        android:hint="Masukan Alamat Pesantren"
-        android:inputType="text" />
-
-    <EditText
-        android:id="@+id/editTextPengasuh"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="4dp"
-        android:ems="10"
-        android:hint="Masukan Nama Pengasuh"
+        android:hint="Masukan No Hp"
         android:inputType="text" />
 
     <Button

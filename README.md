@@ -1,11 +1,11 @@
-Farkhan Mauriza 18090103 5D
+Vony Ayu Anggraini 18090100 5B
 
 
-Alfan Nur Rabbani 18090139 5D
+Muhamad Nur Alim 18090040 5B
 
 
 db : anko sqlite
 
 
-"Data santri"
-"Data ponpes"
+"Data Toko"
+"Data Laptop"

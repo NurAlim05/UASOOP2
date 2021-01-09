@@ -14,76 +14,88 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        var oldMerk = intent.getStringExtra("oldMerk")
+        var oldWarna = intent.getStringExtra("oldWarna")
+        var oldHarga = intent.getStringExtra("oldHarga")
         var oldNama = intent.getStringExtra("oldNama")
         var oldAlamat = intent.getStringExtra("oldAlamat")
-        var oldHandphone = intent.getStringExtra("oldHandphone")
-        var oldPesantren = intent.getStringExtra("oldPesantren")
-        var oldAlamatPonpes = intent.getStringExtra("oldAlamatPonpes")
-        var oldPengasuh = intent.getStringExtra("oldPengasuh")
+        var oldNoHp = intent.getStringExtra("oldNoHpToko")
 
-        if (oldAlamat.isNullOrBlank()){
+        if (oldWarna.isNullOrBlank()){
             buttonUpdate.isEnabled = false
         }else{
             buttonSimpan.isEnabled = false
+            editTextMerk.setText(oldMerk)
+            editTextWarna.setText(oldWarna)
+            editTextHarga.setText(oldHarga)
             editTextNama.setText(oldNama)
             editTextAlamat.setText(oldAlamat)
-            editTextHandphone.setText(oldHandphone)
-            editTextPesantren.setText(oldPesantren)
-            editTextAlamatPesantren.setText(oldAlamatPonpes)
-            editTextPengasuh.setText(oldPengasuh)
+            editTextNohp.setText(oldNoHp)
 
         }
 
         buttonSimpan.setOnClickListener {
-            addDataSantri()
-            addDataPonpes()
+            addDataLaptop()
+            addDataToko()
+
+            // clear data
+            clearData()
         }
 
         buttonLihatData.setOnClickListener {
-            
-            startActivity<ListSantriActivity>()
-            startActivity<ListPonpesActivity>()
+            startActivity<ListLaptopActivity>()
+            startActivity<ListTokoActivity>()
         }
 
         buttonUpdate.setOnClickListener {
             database.use {
-                update(Santri.TABLE_SANTRI,
-                    Santri.NAMA to editTextNama.text.toString(),
-                    Santri.ALAMAT to editTextAlamat.text.toString(),
-                    Santri.HANDPHONE to editTextHandphone.text.toString())
-                    .whereArgs("${Santri.NAMA} = {nama}",
+                update(Laptop.TABLE_LAPTOP,
+                    Laptop.MERK to editTextMerk.text.toString(),
+                    Laptop.WARNA to editTextWarna.text.toString(),
+                    Laptop.HARGA to editTextHarga.text.toString())
+                    .whereArgs("${Laptop.MERK} = {merk}",
+                        "merk" to oldMerk
+                    ).exec()
+                update(Toko.TABLE_TOKO,
+                    Toko.NAMA to editTextNama.text.toString(),
+                    Toko.ALAMAT to editTextAlamat.text.toString(),
+                    Toko.NOHP to editTextNohp.text.toString())
+                    .whereArgs("${Toko.NAMA} = {nama}",
                         "nama" to oldNama
                     ).exec()
-                update(Ponpes.TABLE_PONPES,
-                    Ponpes.PESANTREN to editTextPesantren.text.toString(),
-                    Ponpes.ALAMATPONPES to editTextAlamatPesantren.text.toString(),
-                    Ponpes.PENGASUH to editTextPengasuh.text.toString())
-                    .whereArgs("${Ponpes.PESANTREN} = {pesantren}",
-                        "pesantren" to oldPesantren
-                    ).exec()
             }
+            // clear data
+            clearData()
             toast("Data berhasil di update!")
         }
     }
 
-    private fun addDataSantri() {
+    private fun addDataLaptop() {
         database.use {
-            insert(Santri.TABLE_SANTRI,
-                Santri.NAMA to editTextNama.text.toString(),
-                Santri.ALAMAT to editTextAlamat.text.toString(),
-                Santri.HANDPHONE to editTextHandphone.text.toString()
+            insert(Laptop.TABLE_LAPTOP,
+                Laptop.MERK to editTextMerk.text.toString(),
+                Laptop.WARNA to editTextWarna.text.toString(),
+                Laptop.HARGA to editTextHarga.text.toString()
             )
             toast("Data berhasil disimpan!")
         }
     }
-    private fun addDataPonpes() {
+    private fun addDataToko() {
         database.use {
-            insert(Ponpes.TABLE_PONPES,
-                Ponpes.PESANTREN to editTextPesantren.text.toString(),
-                Ponpes.ALAMATPONPES to editTextAlamatPesantren.text.toString(),
-                Ponpes.PENGASUH to editTextPengasuh.text.toString()
+            insert(Toko.TABLE_TOKO,
+                Toko.NAMA to editTextNama.text.toString(),
+                Toko.ALAMAT to editTextAlamat.text.toString(),
+                Toko.NOHP to editTextNohp.text.toString()
             )
             toast("Data berhasil disimpan!")
         }
+    }
+    fun clearData(){
+        editTextMerk.text.clear()
+        editTextWarna.text.clear()
+        editTextHarga.text.clear()
+        editTextNama.text.clear()
+        editTextAlamat.text.clear()
+        editTextNohp.text.clear()
     }
 }

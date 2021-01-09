@@ -11,29 +11,28 @@ import org.jetbrains.anko.db.delete
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
-class RVAdapterPonpes(val context: Context, val items: ArrayList<Ponpes>) : RecyclerView.Adapter<RVAdapterPonpes.ViewHolder>() {
+class RVAdapterToko(val context: Context, val items: ArrayList<Toko>) : RecyclerView.Adapter<RVAdapterToko.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
 
-
-        fun bindItem(items: Ponpes){
-            itemView.namaPesantren.text = items.pesantren
-            itemView.alamatPesantren.text = items.alamatponpes
-            itemView.pengasuhPesantren.text = items.pengasuh
+        fun bindItem(items: Toko){
+            itemView.namaToko.text = items.nama
+            itemView.alamatToko.text = items.alamat
+            itemView.nohpToko.text = items.nohp
 
             itemView.btnEdit.setOnClickListener {
                 itemView.context.startActivity<MainActivity>(
-                    "oldPesantren" to items.pesantren,
-                    "oldAlamatPonpes" to items.alamatponpes,
-                    "oldPengasuh" to items.pengasuh
+                    "oldNama" to items.nama,
+                    "oldAlamat" to items.alamat,
+                    "oldNohp" to items.nohp
                 )
             }
 
             itemView.btnHapus.setOnClickListener {
                 itemView.context.database.use {
                     delete(
-                        Ponpes.TABLE_PONPES, "${Ponpes.PESANTREN} = {pesantren})",
-                        "pesantren" to items.pesantren.toString()
+                        Toko.TABLE_TOKO, "${Toko.NAMA} = {nama})",
+                        "nama" to items.nama.toString()
                     )
                 }
                 itemView.context.toast("Data Dihapus")
@@ -42,15 +41,13 @@ class RVAdapterPonpes(val context: Context, val items: ArrayList<Ponpes>) : Recy
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        TODO("Not yet implemented")
+        return ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_list, parent, false))
     }
+
+    override fun getItemCount(): Int = items.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        TODO("Not yet implemented")
-    }
-
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        holder.bindItem(items[position])
     }
 
 
